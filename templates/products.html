@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+
+        <h2>Inventory</h2>
+
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'products' %}" class="active">Products</a></li>
+            <li><a href="{% url 'categories' %}">Categories</a></li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Inventory Management System</h1>
+
+        <span>Welcome, Admin</span>
+
+    </div>
+
+    <h2>Products</h2>
+
+        <div class="product-top">
+
+            <input
+                type="text"
+                placeholder="Search Product..."
+                class="search-box">
+
+            <p style="color: gray; font-size: 14px;">
+    Products can be added through the Django Admin Panel.
+</p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+
+            {% for product in products %}
+
+        <tr>
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.category }}</td>
+    <td>{{ product.quantity }}</td>
+    <td>${{ product.price }}</td>
+    <td>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+    </td>
+        </tr>
+
+{% endfor %}
+    
+
+        </table>
+<footer>
+
+    © 2026 Inventory Management System
+
+</footer>         
+
+    </div>
+
+</div>
+
+</body>
+</html>

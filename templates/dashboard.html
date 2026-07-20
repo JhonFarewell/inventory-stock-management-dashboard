@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Inventory</h2>
+
+    <ul>
+    <li><a href="{% url 'dashboard' %}" class="active">Dashboard</a></li>
+    <li><a href="{% url 'products' %}">Products</a></li>
+    <li><a href="{% url 'categories' %}">Categories</a></li>
+    <li><a href="{% url 'login' %}">Logout</a></li>
+    </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Inventory Management System</h1>
+
+        <span>Welcome, Admin</span>
+
+    </div>
+
+    <h2>Dashboard</h2>
+
+        <div class="cards">
+
+    <div class="card">
+        <h3>Total Products</h3>
+        <p>{{ total_products }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Categories</h3>
+        <p>{{ total_categories }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Low Stock</h3>
+        <p>0</p>
+    </div>
+
+    <div class="card">
+        <h3>Out of Stock</h3>
+        <p>0</p>
+    </div>
+
+</div>
+
+        <h2>Recent Products</h2>
+
+        <table>
+
+            <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+
+            <tr>
+                <td>Laptop</td>
+                <td>Electronics</td>
+                <td>25</td>
+            </tr>
+
+            <tr>
+                <td>Mouse</td>
+                <td>Accessories</td>
+                <td>80</td>
+            </tr>
+
+            <tr>
+                <td>Keyboard</td>
+                <td>Accessories</td>
+                <td>40</td>
+            </tr>
+
+            <tr>
+                <td>Monitor</td>
+                <td>Electronics</td>
+                <td>12</td>
+            </tr>
+
+        </table>
+        <footer>
+
+    © 2026 Inventory Management System
+
+</footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>

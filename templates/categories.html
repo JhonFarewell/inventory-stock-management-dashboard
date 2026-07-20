@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Inventory</h2>
+
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'categories' %}" class="active">Categories</a></li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Inventory Management System</h1>
+
+        <span>Welcome, Admin</span>
+
+    </div>
+
+    <h2>Categories</h2>
+
+        <div class="product-top">
+
+            <input
+                type="text"
+                class="search-box"
+                placeholder="Search Category...">
+
+            <button class="add-btn">
+                + Add Category
+            </button>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Category Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Electronics</td>
+                <td>Electronic Devices</td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Accessories</td>
+                <td>Computer Accessories</td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Furniture</td>
+                <td>Office Furniture</td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Stationery</td>
+                <td>Office Supplies</td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+
+        </table>
+        <footer>
+
+    © 2026 Inventory Management System
+
+</footer>
+    </div>
+
+</div>
+
+
+</body>
+</html>

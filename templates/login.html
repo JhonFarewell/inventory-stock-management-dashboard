@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Login</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h1>Inventory System</h1>
+
+        <p>Please login to continue</p>
+        {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+        <form method="POST">
+        {% csrf_token %}
+
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter Username">
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+
+            <button type="submit">Login</button>
+
+        </form>
+<footer>
+
+    © 2026 Inventory Management System
+
+</footer>
+    </div>
+
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
